@@ -118,11 +118,11 @@ jobs:
         if: matrix.os == 'windows-2022'
         shell: cmd
         run: |
-          call "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Auxiliary/Build/vcvars64.bat"
+          call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
           cargo test ${{ matrix.features }} --all
 
       - name: Test (Linux, macOS)
-        if: matrix.os != 'windows-2019'
+        if: matrix.os != 'windows-2022'
         run: |
           cargo test ${{ matrix.features }} --all
 
